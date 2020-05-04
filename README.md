@@ -3,7 +3,8 @@
 1. [Sync & Async Process](#sync-&-async-process)
 1. [What is Callback?](#what-is-callback)
 1. [Why we need callback?](#why-we-need-callback)
-1. [Let's Make Callback!](#lets-make-callback)
+1. [Let's Make Callback - Synchronous](#lets-make-callback---synchronous)
+1. [Let's Make Callback - Asynchronous](#lets-make-callback---asynchronous)
 1. [Real world case study](#real-world-case-study)
 1. [Nested Callback](#nested-callback)
 1. [Referensi](#referensi)
@@ -225,7 +226,7 @@ secara berurutan dan berharap urutan tersebut akan dijalankan dengan benar.
 
 Solusinya bagaimana? salah satunya adalah dengan menggunakan **callback**.
 
-## Let's make callback - sync version
+## Let's make callback - Synchronous
 Kita mengetahui bahwa callback memiliki dua tipe, yaitu sync dan async,
 pada bagian ini kita akan coba membuat sync callback yaitu `sort` pada array.
 
@@ -268,7 +269,7 @@ Output:
  5, 6, 7]
 ```
 
-## Let's make callback - async version
+## Let's make callback - Asynchronous
 Dengan contoh yang sama pada bagian [Why we need calllback](#why-we-need-callback), 
 kita akan memodifikasi kode sehingga walaupun `fungsiPertama` menggunakan `setTimeout` sebagai analogi API Request, namun tetap "ditunggu" oleh 
 `fungsiKedua`

@@ -6,7 +6,6 @@
 1. [Let's Make Callback - Synchronous](#lets-make-callback---synchronous)
 1. [Let's Make Callback - Asynchronous](#lets-make-callback---asynchronous)
 1. [Real world case study](#real-world-case-study)
-1. [Nested Callback](#nested-callback)
 1. [Referensi](#referensi)
 
 ## Prelude What is JSON?
@@ -355,57 +354,9 @@ fs.readFile('./0-generated.json', 'utf8', function callback(err, data) {
   console.log("Hore data sudah selesai dibaca !");
 });
 
-// lakukan logic lainnya, fs.readFile tidak akan nge-block program di bawah ini 
+// lakukan logic lainnya, fs.readFile tidak akan nge-block program di bawah ini
 ```
 
-## Nested Callback
-Misalkan kita ingin membaca 3 file yang berbeda, sebut saja namanya:
-* 0-file1.json
-* 0-file2.json
-* 0-file3.json
-
-Kemudian kita ingin menulis filenya ke dalam `0-result.json`
-
-Bagaimana cara kita menuliskannya secara async?
-
-Code:
-```javascript
-const fs = require('fs');
-
-fs.readFile('./0-file1.json', 'utf8', function cb1(err1,data1) {
-  if(err1) {
-    throw err1;
-  }
-
-  fs.readFile('./0-file2.json', 'utf8', function cb2(err2,data2) {
-    if(err2) {
-      throw err2;
-    }
-
-    fs.readFile('./0-file3.json', 'utf8', function cb3(err3,data3) {
-      if(err3) {
-        throw err3;
-      }
-
-      data1 = JSON.parse(data1);
-      data2 = JSON.parse(data2);
-      data3 = JSON.parse(data3);
-
-      objResult = {
-        name: data1[0].name,
-        company: data2[0].company,
-        email: data3[0].email
-      }
-
-      fs.writeFile('./0-result.json', JSON.stringify(objResult), function(err4) {
-        if(err4) {
-          throw err4;
-        }
-      });
-    });
-  });
-});
-```
 
 ## Referensi
 * [JSON Array type - W3School](https://www.w3schools.com/js/js_json_datatypes.asp)

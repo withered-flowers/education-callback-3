@@ -39,9 +39,21 @@ Contoh file dalam bentuk JSON:
 ```
 
 Keterangan:  
-notasi JSON ini sangat mirip dengan deklarasi array dan object 
-di dalam javascript sendiri, dimana `[ ]` menyatakan array dan `{ }` 
-menyatakan object.
+Notasi JSON ini sangat mirip dengan deklarasi array dan object 
+di dalam javascript sendiri, dimana `[ ]` menyatakan `array` dan `{ }` 
+menyatakan `object`.
+
+Tipe data yang diperbolehkan dalam JSON sendiri pun terbatas, hanya boleh
+berupa:
+* string
+* angka
+* object
+* array
+* boolean
+* null
+
+WARNING:  
+*undefined* tidak diperbolehkan dalam notasi JSON.
 
 Untuk cara penggunaan (membaca dan menulis json, akan dijelaskan di materi
 ini nantinya).
@@ -395,6 +407,7 @@ fs.readFile('./0-file1.json', 'utf8', function cb1(err1,data1) {
 ```
 
 ## Referensi
+* [JSON Array type - W3School](https://www.w3schools.com/js/js_json_datatypes.asp)
 * [Sync & Async in Javascript - Hongkiat](https://www.hongkiat.com/blog/synchronous-asynchronous-javascript)
 * [fs API - NodeJS](https://nodejs.org/api/fs.html)
 * [Array prototype sort - Mozilla Dev](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)

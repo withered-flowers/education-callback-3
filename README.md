@@ -34,17 +34,17 @@ Contoh file dalam bentuk JSON:
     "dob": "2019-06-26T02:55:01.276Z",
     "company": "Schuster - Pollich",
     "image": "gs://gcs.google.com/"
-  },
-  ...
+  }
 ]
 ```
 
 Keterangan:  
-Sangat mirip dengan deklarasi array dan object di dalam javascript sendiri,
-dimana `[ ]` menyatakan array dan `{ }` menyatakan object
+notasi JSON ini sangat mirip dengan deklarasi array dan object 
+di dalam javascript sendiri, dimana `[ ]` menyatakan array dan `{ }` 
+menyatakan object.
 
 Untuk cara penggunaan (membaca dan menulis json, akan dijelaskan di materi
-ini nantinya)
+ini nantinya).
 
 ## Sync & Async Process
 Di dalam dunia *programming*, ada beberapa istilah dalam melakukan kodingan:
@@ -248,6 +248,12 @@ function pembanding(inputPertama, inputKedua) {
 
 unsortedArray.sort(pembanding);
 console.log(unsortedArray);
+```
+
+Output:
+```javascript
+[1, 2, 3, 4,
+ 5, 6, 7]
 ```
 
 ## Let's make callback - async version

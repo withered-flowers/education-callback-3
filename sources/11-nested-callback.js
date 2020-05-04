@@ -25,8 +25,10 @@ fs.readFile('./0-file1.json', 'utf8', function cb1(err1,data1) {
         email: data3[0].email
       }
 
-      fs.writeFile('./0-result.json', JSON.stringify(objResult), function(err) {
-        
+      fs.writeFile('./0-result.json', JSON.stringify(objResult), function(err4) {
+        if(err4) {
+          throw err4;
+        }
       });
     });
   });

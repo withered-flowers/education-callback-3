@@ -270,8 +270,8 @@ Output:
 
 ## Let's make callback - Asynchronous
 Dengan contoh yang sama pada bagian [Why we need calllback](#why-we-need-callback), 
-kita akan memodifikasi kode sehingga walaupun `fungsiPertama` menggunakan `setTimeout` sebagai analogi API Request, namun tetap "ditunggu" oleh 
-`fungsiKedua`
+kita akan memodifikasi kode sehingga walaupun `fungsiPertama` menggunakan `setTimeout` sebagai 
+analogi API Request, namun tetap "ditunggu" oleh `fungsiKedua`
 
 Code:
 ```javascript
@@ -355,6 +355,18 @@ fs.readFile('./0-generated.json', 'utf8', function callback(err, data) {
 });
 
 // lakukan logic lainnya, fs.readFile tidak akan nge-block program di bawah ini
+const objOutput = {
+  param1: "Hello",
+  param2: "World"
+}
+
+fs.writeFile('./0-result.json', objOutput, function calback(err) {
+  if(err) {
+    throw err;
+  }
+  
+  console.log("File 0-result.json sudah terbentuk");
+});
 ```
 
 

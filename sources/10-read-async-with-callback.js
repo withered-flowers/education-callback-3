@@ -16,4 +16,16 @@ fs.readFile('./0-generated.json', 'utf8', function callback(err, data) {
   console.log("Hore data sudah selesai dibaca !");
 });
 
-// lakukan logic lainnya, fs.readFile tidak akan nge-block program di bawah ini 
+// lakukan logic lainnya, fs.readFile tidak akan nge-block program di bawah ini
+const objOutput = {
+  param1: "Hello",
+  param2: "World"
+}
+
+fs.writeFile('./0-result.json', objOutput, function calback(err) {
+  if(err) {
+    throw err;
+  }
+  
+  console.log("File 0-result.json sudah terbentuk");
+});
